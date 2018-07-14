@@ -1,0 +1,191 @@
+.header{
+	color: #216093;
+	font-family: ubuntu;
+	margin: 15px auto;
+	margin-bottom: 25px;
+	min-width: 1643px;
+}
+
+.header h3{
+	font-weight: bold;
+	font-family: ubuntu;
+	margin-bottom: 15px;
+	white-space: normal;
+}
+
+.header h4{
+	font-family: ubuntu;
+	font-style: italic;		
+	font-size: 12px;
+	color: #666;
+	margin-bottom: 15px;
+	display: none;
+}
+
+.counterMessage{
+	display: none;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: ubuntu;
+	color: #E46C0B;
+	margin-bottom: 15px;
+}
+
+.header .currentSquare{
+	display: block;
+    margin: 1px auto;
+    height: 87px;
+    width: 87px;
+    padding: 10px 8px;
+    opacity: 0.85;
+    text-align: left;
+    vertical-align: top;
+    transition: all 0.3s ease;	
+}
+
+.header .currentSquare p{
+	display: initial;
+}
+
+.currentSquare-fade{
+	background: #fff;
+}
+
+.orange-button{
+    font-size: 12px;
+    font-family: Helvetica;
+    padding: 8px 20px;
+    margin-bottom: 25px;
+	color: #fff;
+    background-color: #E46C0B;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.orange-button:hover{
+	background: #216093;
+}
+
+button:focus{
+	outline: none;
+}
+
+input{
+	display: none;
+	margin: 15px auto;
+}
+
+.message{
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	height: 15px;
+}
+
+.square{
+    margin: 1px auto;
+    height: 87px;
+    width: 87px;
+    background: teal;
+    padding: 10px 8px;
+    opacity: 0.85;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    transition: all 0.3s ease;
+}
+
+.square:hover{
+	opacity: 1.0;
+	transition: all 0.3s ease;
+}
+
+.empty-square{
+    margin: 1px auto;
+    height: 87px;
+    width: 87px;
+    background: transparent;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.selectedSquare{
+	opacity: 1.0; !important
+}
+
+.unclickable{
+	pointer-events: none
+}
+
+.full-opacity{
+	opacity: 1.0;
+}
+
+h1{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+p{
+	font-size: 9px;
+	margin: 0px;
+	white-space: normal;
+}
+
+.MyContainer{
+	padding: 10px;
+    background: #fff;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;        
+}
+
+.myRow{
+	margin: 1px auto;
+}
+
+.lastRow{
+	margin-top: 60px;
+}
+
+.hideColor{
+	background: #555 !important;
+	border-color: #555 !important;
+	color: #fff !important;
+	transition: all 0.3s ease;
+}
+
+.blue{
+	background: #216093;
+	color: #fff;
+}
+
+.orange{
+	background: #e46e25;
+	color: #fff;
+}
+
+.gray{
+	background: #606062;
+	color: #fff;
+}
+
+.green{
+	background: #67bd47;
+	color: #fff;
+}
+
+.white{
+	background: #fff;
+	border: 2px solid #cccccc;
+	color: #cccccc;
+}
+
+.correct{
+	color: #67bd47;
+}
