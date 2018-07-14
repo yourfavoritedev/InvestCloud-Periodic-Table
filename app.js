@@ -13,6 +13,7 @@ var currentSquareCode = document.querySelector(".currentSquare h1")
 var currentSquareDesc = document.querySelector(".currentSquare p")
 var message = document.querySelector(".message")
 var counter = 0
+var answeredCorrect = false
 var activeGame = false
 
 
@@ -147,6 +148,7 @@ for(var i = 0; i < squares.length; i++){
 				currentSquareDesc.textContent = ""
 				message.classList.remove("correct")
 				input.disabled = false
+				answeredCorrect = false
 				checkAnswer(i)
 			}
 		})
@@ -168,7 +170,7 @@ function removeActive(){
 function checkAnswer(i){
 	input.addEventListener("keypress", function(event){
 		//13 is the value for enter
-		if(event.which === 13){
+		if(event.which === 13){	
 			var entry = event.target.value
 			//user entry matches the block's text
 			if(entry == desc[i].textContent){
@@ -187,8 +189,8 @@ function checkAnswer(i){
 				//disable input to prevent user from reentering already used answer. prevents double-scoring.
 				input.value = ""
 				input.disabled = true
-
-			} else if(entry != desc[i].textContent){
+				answeredCorrect = true
+			} else if(!answeredCorrect){
 				message.textContent = "Well, that's not right. Try Again."
 			}
 		}
