@@ -142,7 +142,7 @@ for(var i = 0; i < squares.length; i++){
 			//only want the currentSquare to be displayed when the game is active
 			if(activeGame){
 				currentSquare.removeAttribute("class")
-				currentSquare.classList.add("currentSquare", this.classList[1], this.classList[2])
+				currentSquare.classList.add("currentSquare", this.classList[1], this.classList[2], "full-opacity")
 				currentSquareCode.textContent = codes[i].textContent
 				currentSquareDesc.textContent = ""
 				message.classList.remove("correct")
@@ -177,6 +177,7 @@ function checkAnswer(i){
 				squares[i].classList.add("full-opacity")
 				squares[i].classList.add("unclickable")
 				currentSquare.classList.remove("hideColor")
+				currentSquare.classList.add("full-opacity")
 				desc[i].style.display = "initial"
 				message.textContent = "That's right. Nice job!"
 				message.classList.add("correct")
