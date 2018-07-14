@@ -72,60 +72,19 @@ window.addEventListener("load", function(){
 
 //start Game
 playButton.addEventListener("click", function(){
-	startGame()
+	toggleGame()
 })
 
 
 
 //set game status
-function startGame(){
+function toggleGame(){
 	//activeGame starts out as false
 	if(!activeGame){
-		for(var i = 0; i < squares.length; i++){
-			//restart the game
-			activeGame = true
-			squares[i].classList.add("hideColor")
-			squares[i].classList.remove("unclickable")
-			desc[i].style.display = "none"
-			playButton.textContent = "Reset"
-			header.textContent = "Click any block and enter its definition."
-			counterMessage.style.display = "block"
-			counterDisplay.textContent = counter
-			note.style.display = "inherit"
-			input.style.display = "block"
-			//user must select a block before they can prove an input
-			input.disabled = true
-			message.classList.remove("correct")
-			//remove any active squares		
-			removeActive()
-			currentSquare.classList.add("hideColor")
-		}	
+		startGame()
 
 	} else{
-		for(var i = 0; i < squares.length; i++){
-			//show the initial layout
-			activeGame = false
-			squares[i].classList.remove("hideColor")
-			squares[i].classList.remove("unclickable")
-			squares[i].classList.remove("full-opacity")
-			desc[i].style.display = "inherit"
-			playButton.textContent = "Find Out"
-			header.textContent = "How well do you know our Apps?"
-			counterMessage.style.display = "none"
-			note.style.display = "none"
-			input.style.display = "none"
-			counter = 0;
-			//remove any active squares
-			removeActive()
-			//the current Square should be empty if the game is not live	
-			currentSquare.removeAttribute("class")
-			currentSquare.classList.add("currentSquare")
-			currentSquareCode.textContent = ""
-			currentSquareDesc.textContent = ""
-			message.classList.remove("correct")
-			message.textContent = ""
-			input.value = ""
-		}
+		resetGame()
 	}
 }
 
@@ -193,4 +152,56 @@ function checkAnswer(i){
 			}
 		}
 	})
+}
+
+
+function startGame(){
+	for(var i = 0; i < squares.length; i++){
+		//restart the game
+		activeGame = true
+		squares[i].classList.add("hideColor")
+		squares[i].classList.remove("unclickable")
+		desc[i].style.display = "none"
+		playButton.textContent = "Reset"
+		header.textContent = "Click any block and enter its definition."
+		counterMessage.style.display = "block"
+		counterDisplay.textContent = counter
+		note.style.display = "inherit"
+		input.style.display = "block"
+		//user must select a block before they can provide an input
+		input.disabled = true
+		message.classList.remove("correct")
+		//remove any active squares		
+		removeActive()
+		currentSquare.classList.add("hideColor")
+	}					
+}
+
+
+
+function resetGame(){
+	for(var i = 0; i < squares.length; i++){
+		//show the initial layout
+		activeGame = false
+		squares[i].classList.remove("hideColor")
+		squares[i].classList.remove("unclickable")
+		squares[i].classList.remove("full-opacity")
+		desc[i].style.display = "inherit"
+		playButton.textContent = "Find Out"
+		header.textContent = "How well do you know our Apps?"
+		counterMessage.style.display = "none"
+		note.style.display = "none"
+		input.style.display = "none"
+		counter = 0;
+		//remove any active squares
+		removeActive()
+		//the current Square should be empty if the game is not live	
+		currentSquare.removeAttribute("class")
+		currentSquare.classList.add("currentSquare")
+		currentSquareCode.textContent = ""
+		currentSquareDesc.textContent = ""
+		message.classList.remove("correct")
+		message.textContent = ""
+		input.value = ""
+	}	
 }
