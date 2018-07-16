@@ -126,6 +126,7 @@ function startGame(){
 			message.classList.remove("correct")
 			message.textContent = ""
 			input.value = ""
+			input.placeholder = "Click on a block"
 		}
 	}
 }
@@ -148,6 +149,7 @@ for(var i = 0; i < squares.length; i++){
 				currentSquareDesc.textContent = ""
 				message.classList.remove("correct")
 				input.disabled = false
+				input.placeholder="Type and press enter"
 				answeredCorrect = false
 				checkAnswer(i)
 			}
@@ -188,11 +190,18 @@ function checkAnswer(i){
 				counterDisplay.textContent = counter
 				//disable input to prevent user from reentering already used answer. prevents double-scoring.
 				input.value = ""
+				input.placeholder = "Great, time for the next one!"
 				input.disabled = true
 				answeredCorrect = true
 			} else if(!answeredCorrect){
 				message.textContent = "Well, that's not right. Try Again."
 			}
+		}
+		
+		if(counter === 102){
+			header.textContent = "Amazing, you solved them all! You're a true Cloudster"
+			input.placeholder = "You're awesome."
+			input.disabled = true
 		}
 	})
 }
